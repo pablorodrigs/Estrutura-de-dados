@@ -1,4 +1,4 @@
- #Last In, First Out (LIFO), 
+
 class Pilha:
     def __init__(self):
         # Inicializa a lista vazia para armazenar os itens da pilha
@@ -48,3 +48,5 @@ print("Item removido:", item_removido)  # Saída: 3
 # Imprime o novo topo da pilha e o tamanho atualizado da pilha
 print("Topo da pilha após pop:", pilha_exemplo.topo())  # Saída: 2
 print("Tamanho da pilha após pop:", pilha_exemplo.tamanho())  # Saída: 2
+
+ #Last In, First Out (LIFO), 
