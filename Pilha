@@ -1,0 +1,50 @@
+ #Last In, First Out (LIFO), 
+class Pilha:
+    def __init__(self):
+        # Inicializa a lista vazia para armazenar os itens da pilha
+        self.itens = []
+
+    def vazia(self):
+        # Retorna True se a pilha estiver vazia, False caso contrário
+        return len(self.itens) == 0
+
+    def tamanho(self):
+        # Retorna o número de elementos na pilha
+        return len(self.itens)
+
+    def push(self, item):
+        # Adiciona um elemento ao topo da pilha
+        self.itens.append(item)
+
+    def pop(self):
+        # Remove e retorna o elemento no topo da pilha, levanta exceção se a pilha estiver vazia
+        if not self.vazia():
+            return self.itens.pop()
+        else:
+            raise IndexError("pop de pilha vazia")
+
+    def topo(self):
+        # Retorna o elemento no topo da pilha sem removê-lo, levanta exceção se a pilha estiver vazia
+        if not self.vazia():
+            return self.itens[-1]
+        else:
+            raise IndexError("pilha vazia")
+
+# Exemplo de uso:
+pilha_exemplo = Pilha()
+
+pilha_exemplo.push(1)
+pilha_exemplo.push(2)
+pilha_exemplo.push(3)
+
+# Imprime o topo da pilha e o tamanho da pilha
+print("Topo da pilha:", pilha_exemplo.topo())  # Saída: 3
+print("Tamanho da pilha:", pilha_exemplo.tamanho())  # Saída: 3
+
+# Remove um elemento da pilha e imprime o elemento removido
+item_removido = pilha_exemplo.pop()
+print("Item removido:", item_removido)  # Saída: 3
+
+# Imprime o novo topo da pilha e o tamanho atualizado da pilha
+print("Topo da pilha após pop:", pilha_exemplo.topo())  # Saída: 2
+print("Tamanho da pilha após pop:", pilha_exemplo.tamanho())  # Saída: 2
