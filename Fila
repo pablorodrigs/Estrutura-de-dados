@@ -1,0 +1,52 @@
+    
+class Fila:
+    def __init__(self):
+        # Inicializa a lista vazia para armazenar os elementos da fila
+        self.itens = []
+
+    def vazia(self):
+        # Retorna True se a fila estiver vazia, False caso contrário
+        return len(self.itens) == 0
+
+    def tamanho(self):
+        # Retorna o número de elementos na fila
+        return len(self.itens)
+
+    def enfileirar(self, item):
+        # Adiciona um elemento ao final da fila
+        self.itens.append(item)
+
+    def desenfileirar(self):
+        # Remove e retorna o elemento no início da fila, levanta exceção se a fila estiver vazia
+        if not self.vazia():
+            return self.itens.pop(0)
+        else:
+            raise IndexError("desenfileirar de fila vazia")
+
+    def frente(self):
+        # Retorna o elemento no início da fila sem removê-lo, levanta exceção se a fila estiver vazia
+        if not self.vazia():
+            return self.itens[0]
+        else:
+            raise IndexError("fila vazia")
+
+# Exemplo de uso:
+fila_exemplo = Fila()
+
+fila_exemplo.enfileirar(1)
+fila_exemplo.enfileirar(2)
+fila_exemplo.enfileirar(3)
+
+# Imprime o elemento no início da fila e o tamanho da fila
+print("Elemento no início da fila:", fila_exemplo.frente())  # Saída: 1
+print("Tamanho da fila:", fila_exemplo.tamanho())  # Saída: 3
+
+# Remove um elemento do início da fila e imprime o elemento removido
+item_removido = fila_exemplo.desenfileirar()
+print("Item removido:", item_removido)  # Saída: 1
+
+# Imprime o novo elemento no início da fila e o tamanho atualizado da fila
+print("Elemento no início da fila após desenfileirar:", fila_exemplo.frente())  # Saída: 2
+print("Tamanho da fila após desenfileirar:", fila_exemplo.tamanho())  # Saída: 2
+
+#First In, First Out (FIFO),
